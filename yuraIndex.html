@@ -36,9 +36,9 @@
                 <map name="food">
                     <area shape="circle" coords="200,150,100" href="kimchi.html" target="_blank" title="김치찌개 페이지로 이동">
                     <area shape="circle" coords="0,150,50" href="spinach.html" target="_top" title="시금치 페이지로 이동">
-                    <area shape="rectangle" coords="0,200,100,300" href="eggroll.html" onclick="showMessage()">
-                    <area shape="circle" coords="400,50,50" href="kim.html">
-                    <area shape="circle" coords="300,0,70" href="rice.html">
+                    <area shape="rectangle" coords="0,200,100,300" href="eggroll.html" onclick="showMessage('eggroll')">
+                    <area shape="circle" coords="400,50,50" href="kim.html" onclick="showMessage('kim')">
+                    <area shape="circle" coords="300,0,70" href="rice.html" onclick="showMessage('rice')">
                 </map>
             </li>
             <li>
@@ -67,9 +67,24 @@
 <div class="bookmark"><a href="#top" id="bottom">TOP</a></div>
 
 <script>
-    <!--TODO 클릭하는 경우 id에 따라서 "계란말이", "김", "밥"을 클릭했습니다가 따로 나올 수 있도록-->
-    function showMessage() {
-        alert("계란말이를 클릭했습니다")
+
+    function showMessage(menu) {
+        let message;
+        console.log("clicked");
+        switch(menu) {
+            case 'eggroll':
+                message="계란말이를 클릭했습니다";
+                break;
+            case 'kim':
+                message="김을 클릭했습니다";
+                break;
+            case 'rice':
+                message="밥을 클릭했습니다";
+                break;
+            default:
+                message="오류";
+        }
+        alert(message)
     }
 </script>
 
